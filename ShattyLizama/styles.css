@@ -1,0 +1,303 @@
+/* ==========================================================
+   este es todo el codigo de la pagina web de portafolio de shatty lizama, 
+   utilice bootstrap 5.3 y css puro para el diseño de la pagina web,
+   dividi todo para que se viera bien por que es algo dificil de leer y para que este organizado
+   ----------------------------------------------------------
+   MAPA DEL TESORO (usa Ctrl+F con el número para saltar):
+   0. Ingredientes secretos (colores)
+   1. Cimientos de la casa (base)
+   2. Barra de progreso cohete
+   3. Menú superior
+   4. Botones
+   5. Portada (foto, burbujas, texto que se escribe)
+   6. Títulos y banda de la frase
+   7. Tarjeta de cristal y sus primas
+   8. Botones de filtro
+   9. Tarjetas clicables (logros y voluntariados)
+   10. Portafolio de proyectos
+   11. Caja del CV y footer
+   12. Ventana mágica de imágenes
+   13. Aparecer al hacer scroll
+   14. Modo tranquilo (sin animaciones)
+   ========================================================== */
+
+
+/* ==========================================================
+   0. INGREDIENTES SECRETOS
+   Cambia un color aquí y cambia en TODA la página.
+   ========================================================== */
+:root{
+  --fondo-noche:#0A0F2C;      /* el azul medianoche de todo el fondo */
+  --fondo-noche-claro:#111a4a;/* un poquito más claro, para franjas */
+  --cian-electrico:#00e0ff;   /* el color estrella */
+  --violeta-galaxia:#8b5cf6;
+  --rosa-neon:#ff3d9a;
+  --lima-hacker:#b6ff3b;      /* verde estilo terminal */
+  --ambar-oro:#ffc53d;        /* para los premios */
+  --texto-claro:#e7edfc;
+  --texto-suave:#e1eeeb;      /* para textos secundarios */
+  --vidrio:rgba(255,255,255,.06);       /* relleno de las tarjetas */
+  --borde-vidrio:rgba(255,255,255,.12); /* bordecito fino */
+}
+
+
+/*  1. CIMIENTOS DE LA CASA */
+html{scroll-behavior:smooth;scroll-padding-top:80px}  /* scroll suave sin tapar títulos con el menú */
+
+body{
+  background:var(--fondo-noche);
+  color:var(--texto-claro);
+  font-family:'Manrope',sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4,.menu-logo{font-family:'Sora',sans-serif;letter-spacing:-.02em}  /* letra "tech" para los títulos */
+a{color:var(--cian-electrico)}
+:focus-visible{outline:2px solid var(--cian-electrico);outline-offset:3px}     /* para quien navega con teclado */
+section{padding:4.5rem 0}                                                      /* aire entre secciones */
+
+
+/* 2. BARRA DE PROGRESO COHETE 
+   La rayita de colores arriba que crece mientras haces scroll */
+#barra-progreso{
+  position:fixed;top:0;left:0;height:3px;width:0;z-index:2000;
+  background:linear-gradient(90deg,var(--cian-electrico),var(--violeta-galaxia),var(--rosa-neon));
+}
+
+
+/* 3. MENÚ SUPERIOR  */
+.menu-superior{
+  background:rgba(10,15,44,.7);
+  backdrop-filter:blur(14px);            /* efecto vidrio esmerilado */
+  border-bottom:1px solid var(--borde-vidrio);
+}
+.menu-logo{color:#fff;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:.6rem}
+.menu-logo img{height: 150px;width: 200px}
+
+/* enlaces del menú (.nav-link es de Bootstrap, solo le cambiamos la ropa) */
+.menu-superior .nav-link{color:var(--texto-suave)!important;font-weight:800;position:relative}
+.menu-superior .nav-link:hover{color:#fff!important}
+.menu-superior .nav-link::after{   /* subrayado que crece al pasar el mouse */
+  content:"";position:absolute;left:.5rem;right:.5rem;bottom:2px;height:2px;
+  background:var(--cian-electrico);transform:scaleX(0);transition:.3s;
+}
+.menu-superior .nav-link:hover::after{transform:scaleX(1)}
+.navbar-toggler{filter:invert(1)}  /* hamburguesa blanca en celular */
+
+
+/*  4. BOTONES */
+/* El botón con degradado que se mueve (el más llamativo) */
+.boton-neon{
+  background:linear-gradient(120deg,var(--cian-electrico),var(--violeta-galaxia),var(--rosa-neon));
+  background-size:200% 200%;
+  color:#fff;border:0;border-radius:99px;font-weight:700;padding:.7rem 1.6rem;
+  animation:degradado-fluido 6s linear infinite;
+  box-shadow:0 0 24px rgba(139,92,246,.5);
+  transition:.3s;
+}
+.boton-neon:hover{color:#fff;transform:translateY(-3px);box-shadow:0 0 38px rgba(0,224,255,.7)}
+
+/* El botón transparente, discreto como un fantasma */
+.boton-fantasma{border:1px solid var(--borde-vidrio);color:#fff;border-radius:99px;padding:.7rem 1.6rem;font-weight:600;background:var(--vidrio)}
+.boton-fantasma:hover{border-color:var(--cian-electrico);color:var(--cian-electrico)}
+
+@keyframes degradado-fluido{to{background-position:200% 0}}
+
+
+/* 5. PORTADA  */
+.portada{position:relative;padding:5rem 0 4rem;overflow:hidden}
+.portada .container{position:relative;z-index:1}  /* el contenido siempre por encima de las burbujas */
+
+/* --- Burbujas de luz que flotan de fondo 🫧 --- */
+.burbuja{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:flotar-burbuja 12s ease-in-out infinite}
+.burbuja-violeta{width:420px;height:420px;background:var(--violeta-galaxia);top:-100px;left:-100px}
+.burbuja-cian{width:360px;height:360px;background:var(--cian-electrico);right:-80px;top:120px;animation-delay:-4s}
+.burbuja-rosa{width:300px;height:300px;background:var(--rosa-neon);bottom:-120px;left:40%;animation-delay:-8s}
+@keyframes flotar-burbuja{50%{transform:translate(40px,-40px) scale(1.15)}}
+
+/* --- Textos de la portada --- */
+.saludo-terminal{font-family:'JetBrains Mono',monospace;color:var(--lima-hacker);font-size:1.05rem}  /* "> Hola, soy" */
+.portada h1{
+  font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;
+  background:linear-gradient(100deg,#fff,var(--cian-electrico) 50%,var(--violeta-galaxia));
+  -webkit-background-clip:text;background-clip:text;color:transparent;  /* nombre con degradado */
+}
+.rol-maquina{font-family:'JetBrains Mono',monospace;font-size:1.3rem;min-height:2rem;color:var(--ambar-oro)}  /* el texto que se escribe solo */
+.rol-maquina::after{content:"▍";animation:parpadeo-cursor 1s steps(2) infinite;color:var(--cian-electrico)}  /* cursor titilante */
+@keyframes parpadeo-cursor{50%{opacity:0}}
+
+.frase-pastilla{display:inline-block;padding:.5rem 1.1rem;border-radius:99px;border:1px solid var(--borde-vidrio);background:var(--vidrio)}
+.frase-pastilla i{color:var(--cian-electrico);margin-right:.5rem}
+
+/* --- Foto con aro de colores giratorio --- */
+.marco-foto{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto;animation:flotar-suave 6s ease-in-out infinite}
+.marco-foto::before{   /* el aro que gira detrás de la foto */
+  content:"";position:absolute;inset:-8px;border-radius:50%;filter:blur(2px);
+  background:conic-gradient(from 0deg,var(--cian-electrico),var(--violeta-galaxia),var(--rosa-neon),var(--lima-hacker),var(--cian-electrico));
+  animation:girar-aro 6s linear infinite;
+}
+.marco-foto img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid var(--fondo-noche);background:var(--fondo-noche-claro)}
+@keyframes flotar-suave{50%{transform:translateY(-14px)}}
+@keyframes girar-aro{to{transform:rotate(360deg)}}
+
+/* --- Etiquetitas de código que flotan alrededor de la foto --- */
+.etiqueta-flotante{
+  position:absolute;padding:.4rem .8rem;border-radius:12px;
+  background:rgba(17,26,74,.85);border:1px solid var(--borde-vidrio);backdrop-filter:blur(8px);
+  font:600 .8rem 'JetBrains Mono',monospace;animation:flotar-suave 5s ease-in-out infinite;
+}
+.etiqueta-html{top:8%;left:-6%;color:var(--cian-electrico)}
+.etiqueta-js{top:40%;right:-10%;color:var(--rosa-neon);animation-delay:-2s}
+.etiqueta-git{bottom:6%;left:0;color:var(--lima-hacker);animation-delay:-3.5s}
+
+/* --- Botoncitos de redes sociales --- */
+.redes-sociales{display:flex;gap:.7rem;justify-content:center;margin-top:2rem}
+.redes-sociales a{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--vidrio);border:1px solid var(--borde-vidrio);color:#fff;font-size:1.2rem;transition:.3s}
+.redes-sociales a:hover{background:var(--cian-electrico);color:var(--fondo-noche);transform:translateY(-5px) rotate(-6deg);box-shadow:0 0 20px var(--cian-electrico)}
+
+
+/* 
+   6. TÍTULOS Y BANDA DE LA FRASE */
+.titulo-seccion{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700}
+.titulo-seccion::after{   /* rayita de colores debajo de cada título para que se vean mas lindo, jejejeejje por que siiii*/
+  content:"";display:block;width:70px;height:4px;margin:.6rem auto 0;border-radius:9px;
+  background:linear-gradient(90deg,var(--cian-electrico),var(--rosa-neon));
+}
+.subtitulo-seccion{color:var(--texto-suave);max-width:900px;margin:1rem auto 3rem}
+
+/* La franja con la frase impactante */
+.banda-frase{text-align:center;background:linear-gradient(120deg,var(--fondo-noche-claro),#1b1466);border-block:1px solid var(--borde-vidrio)}
+.banda-frase h2{font-size:clamp(1.3rem,3vw,2rem);font-weight:600;max-width:900px;margin:auto}
+
+
+/* 7. TARJETA DE CRISTAL Y SUS PRIMAS
+   La tarjeta base que se usa en casi toda la página*/
+.tarjeta-cristal{
+  position:relative;overflow:hidden;padding:1.5rem;border-radius:20px;
+  background:var(--vidrio);border:1px solid var(--borde-vidrio);
+  transition:transform .3s,border-color .3s;
+}
+/*modificación de texto por que si*/
+/* Textos secundarios de Bootstrap (párrafo "sobre mí", nombres de escuelas...) */
+.text-secondary{color:var(--texto-suave)!important;font-size:1.2rem}
+
+.tarjeta-cristal::before{   /* el brillo que sigue a tu cursor (posición la pone el JS) */
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:.3s;
+  background:radial-gradient(260px circle at var(--x,50%) var(--y,0%),rgba(0,224,255,.22),transparent 70%);
+}
+.tarjeta-cristal:hover{transform:translateY(-6px);border-color:rgba(0,224,255,.5)}
+.tarjeta-cristal:hover::before{opacity:1}
+
+/* Primas: versiones especiales de la tarjeta (premios y destacados) */
+.tarjeta-cristal.destaque-oro{border-color:rgba(255,197,61,.5)}
+.tarjeta-cristal.destaque-azul{border-color:rgba(139,92,246,.6)}
+.tarjeta-cristal.destaque-verde{border-color:rgba(182,255,59,.45)}
+
+/* Números grandes (11 logros, 6 voluntariados...) */
+.dato-numerico{text-align:center}
+.dato-numerico b{display:block;font:800 2.4rem 'Sora';color:var(--cian-electrico)}
+.dato-numerico span{color:var(--texto-suave);font-size:.9rem}
+
+/* Fila de dato con ícono (lugar, correo) */
+.dato-contacto{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.dato-contacto i{font-size:1.4rem;color:var(--cian-electrico)}
+.dato-contacto small{display:block;color:var(--texto-suave)}
+
+/* Línea de tiempo de la formación */
+.linea-tiempo{border-left:2px solid var(--violeta-galaxia);padding-left:1.4rem}
+.linea-tiempo .tarjeta-cristal{margin-bottom:1rem}
+.linea-tiempo .tarjeta-cristal::after{   /* el puntito brillante de cada etapa */
+  content:"";position:absolute;left:-2.1rem;top:1.7rem;width:14px;height:14px;border-radius:50%;
+  background:var(--cian-electrico);box-shadow:0 0 14px var(--cian-electrico);
+}
+
+/* Etiquetita del año (2024, 2025...) */
+.etiqueta-anio{display:inline-block;font:600 .78rem 'JetBrains Mono',monospace;color:var(--fondo-noche);background:var(--cian-electrico);border-radius:99px;padding:.15rem .7rem}
+.destaque-oro .etiqueta-anio{background:var(--ambar-oro)}
+.destaque-azul .etiqueta-anio{background:var(--violeta-galaxia);color:#fff}
+.destaque-verde .etiqueta-anio{background:var(--lima-hacker)}
+
+/* Insignias de tecnologías (HTML, CSS, React...) */
+.insignia-tecnologia{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--borde-vidrio);background:var(--vidrio);font-weight:600;font-size:.9rem;transition:.3s}
+.insignia-tecnologia:hover{border-color:var(--rosa-neon);box-shadow:0 0 18px rgba(255,61,154,.5);transform:scale(1.08)}
+
+
+/* 8. BOTONES DE FILTRO*/
+.boton-filtro{border:1px solid var(--borde-vidrio);background:var(--vidrio);color:var(--texto-suave);border-radius:99px;padding:.5rem 1.1rem;font-weight:600;transition:.3s}
+.boton-filtro:hover,.boton-filtro.activo{background:linear-gradient(120deg,var(--cian-electrico),var(--violeta-galaxia));color:#fff;border-color:transparent}
+
+
+/* 9. TARJETAS CLICABLES (LOGROS Y VOLUNTARIADOS) */
+/* Cada tarjeta es un botón (así funciona con teclado). all:unset borra el estilo feo del botón */
+.tarjeta-clic{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:.5rem;width:100%;height:100%;cursor:pointer;text-align:left}
+.tarjeta-clic h4{font-size:1.1rem;font-weight:700;margin:0;color:#fff}
+.tarjeta-clic p{color:var(--texto-suave);font-size:.92rem;margin:0;flex:1}
+.tarjeta-clic:focus-visible{outline:2px solid var(--cian-electrico);outline-offset:6px;border-radius:16px}
+
+/* Pie de tarjeta: categoría + el "Ver imagen" que aparece al pasar el mouse */
+.pie-tarjeta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--borde-vidrio);padding-top:.7rem;font-size:.85rem;color:var(--cian-electrico)}
+.pie-tarjeta em{font-style:normal;color:var(--lima-hacker);opacity:0;transform:translateX(-8px);transition:.3s}
+.tarjeta-cristal:hover .pie-tarjeta em{opacity:1;transform:none}
+
+/* Animación al filtrar: las tarjetas "saltan" al aparecer, las demás desaparecen */
+.tarjeta-item{animation:aparecer-con-pop .5s both}
+.tarjeta-item.oculta{display:none}
+@keyframes aparecer-con-pop{from{opacity:0;transform:scale(.92)}}
+
+
+/* 10. PORTAFOLIO DE PROYECTOS
+   Cada proyecto tiene sus propios colores (--g1 y --g2 en el HTML) */
+.proyecto-portafolio{
+  display:block;position:relative;overflow:hidden;min-height:230px;padding:1.5rem;
+  border-radius:22px;text-decoration:none;color:#fff;transition:.35s;
+  background:linear-gradient(150deg,var(--g1),var(--g2));
+}
+.proyecto-portafolio:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 20px 50px -10px var(--g1);color:#fff}
+.proyecto-portafolio::after{   /* la flechita ↗ de la esquina */
+  content:"\F138";font-family:bootstrap-icons;position:absolute;right:1.2rem;top:1.2rem;font-size:1.6rem;transition:.3s;
+}
+.proyecto-portafolio:hover::after{transform:translate(4px,-4px) scale(1.2)}
+.proyecto-portafolio small{font-family:'JetBrains Mono',monospace;background:rgba(0,0,0,.28);padding:.2rem .6rem;border-radius:99px}
+.proyecto-portafolio h3{font-size:2rem;font-weight:800;margin:4rem 0 0}
+
+
+/*  11. CAJA DEL CV Y FOOTER */
+.caja-cv{background:linear-gradient(120deg,var(--violeta-galaxia),var(--rosa-neon));border-radius:28px;padding:2.5rem}
+
+footer{border-top:1px solid var(--borde-vidrio);text-align:center;padding:3rem 1rem;color:var(--texto-suave)}
+footer a{color:var(--texto-suave);text-decoration:none;margin:0 .8rem}
+footer a:hover{color:var(--cian-electrico)}
+
+
+/* 12. VENTANA MÁGICA DE IMÁGENES 
+   Se abre al tocar una tarjeta de logro o voluntariado */
+dialog{
+  width:min(860px,94vw);padding:1.2rem;border-radius:22px;
+  background:var(--fondo-noche-claro);color:var(--texto-claro);
+  border:1px solid var(--cian-electrico);box-shadow:0 0 60px rgba(0,224,255,.35);
+}
+dialog[open]{animation:entrar-ventana .35s cubic-bezier(.2,1.2,.4,1)}   /* entra con rebotito */
+dialog::backdrop{background:rgba(5,8,25,.8);backdrop-filter:blur(6px)}  /* fondo oscuro difuminado */
+@keyframes entrar-ventana{from{opacity:0;transform:scale(.85) translateY(20px)}}
+
+dialog img{width:100%;max-height:72vh;object-fit:contain;border-radius:14px;background:var(--fondo-noche)}
+.imagen-vacia{padding:3rem 1rem;text-align:center;color:var(--texto-suave);border:2px dashed var(--borde-vidrio);border-radius:14px}  /* mensaje si aún no pones tu imagen */
+.boton-cerrar{float:right;border:0;background:var(--rosa-neon);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.1rem}
+
+
+/*  13. APARECER AL HACER SCROLL 
+   Los elementos con .aparece-al-scroll entran suavecito.
+   El JS les agrega .visible cuando llegan a la pantalla.*/
+.aparece-al-scroll{opacity:0;transform:translateY(28px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.aparece-al-scroll.visible{opacity:1;transform:none}
+
+
+/* 14. MODO TRANQUILO 
+   Si la persona pidió menos movimiento en su dispositivo,
+   apagamos todas las animaciones (por accesibilidad). */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .aparece-al-scroll{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shatty Lizama</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="barra-progreso"></div>
+
+<nav class="navbar navbar-expand-lg menu-superior sticky-top px-3 px-md-5">
+  <div class="container-fluid">
+    <a class="menu-logo" href="#home"><img src="img/logoMarcaPersonal.png" alt="Logo"> Shatty Lizama</a>
+    <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#nv" aria-label="Menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="nv">
+      <ul class="navbar-nav gap-lg-2 align-items-lg-center">
+        <li><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="nav-link" href="#formacion">Formación</a></li>
+        <li><a class="nav-link" href="#logros">Logros</a></li>
+        <li><a class="nav-link" href="#voluntariados">Voluntariados</a></li>
+        <li><a class="nav-link" href="#portafolio">Portafolio</a></li>
+        <li><a href="#contacto" class="btn boton-neon btn-sm ms-lg-2">Hablemos <i class="bi bi-send-fill"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HOMEEEEEEEEEEEEEEEEEEEE aquí es donde esta mi primera impresion -->
+<header id="home" class="portada">
+  <div class="burbuja burbuja-violeta"></div><div class="burbuja burbuja-cian"></div><div class="burbuja burbuja-rosa"></div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="saludo-terminal">&gt; Hola, soy</div>
+        <h1>Shatty Lizama</h1>
+        <div class="rol-maquina" id="rol"></div>
+        <p class="frase-pastilla my-4"><i class="bi bi-code-slash"></i>No solo quiero aprender a programar, quiero aprender a crear soluciones</p>
+        <p class="text-secondary fs-5">Soy una apasionada del desarrollo web y la tecnología.</p>
+        <a href="#portafolio" class="btn boton-neon me-2">Ver mis proyectos <i class="bi bi-rocket-takeoff-fill ms-1"></i></a>
+        <a href="#cv" class="btn boton-fantasma">Mi CV</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="marco-foto">
+          <img src="img/shattylizama.png" alt="Shatty Lizama">
+
+          <!-- Etiquetas flotantes para que se vea más profesionalllll-->
+
+          <span class="etiqueta-flotante etiqueta-html">&lt;HTML/&gt;</span><span class="etiqueta-flotante etiqueta-js">{ JS }</span><span class="etiqueta-flotante etiqueta-git">git push</span>
+        </div>
+        <div class="redes-sociales">
+          <!-- Cambia los href por tus perfiles -->
+          <a href="https://github.com/Shatty26" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/shatty-lizama-160927435/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/shatty_lizama?stkn=MW1jZGUydmE2c3FncQ==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--Frase impactanteeeeeeeeeeee-->
+<section class="banda-frase aparece-al-scroll">
+  <div class="container">
+    <h2>"No solo quiero aprender a programar, quiero aprender a crear soluciones."</h2>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7 aparece-al-scroll">
+        <h2 class="titulo-seccion text-start mb-3" style="--x:0">¡Hola! Soy Shatty</h2>
+        <p class="text-secondary">Me considero una persona responsable, perseverante y apasionada por la tecnología. Destaco por mi resiliencia y deducción para superar retos, aprendiendo y explorando constantemente nuevas áreas técnicas. Soy empática, dedicada y busco siempre mejorar, aportando valor y ayudando a los demás a través del aprendizaje continuo.</p>
+        <div class="row g-3 mt-2">
+          <div class="col-4"><div class="tarjeta-cristal dato-numerico"><b data-n="11">0</b><span>Logros</span></div></div>
+          <div class="col-4"><div class="tarjeta-cristal dato-numerico"><b data-n="6">0</b><span>Voluntariados</span></div></div>
+          <div class="col-4"><div class="tarjeta-cristal dato-numerico"><b data-n="150">0</b><span>Horas de servicio</span></div></div>
+        </div>
+      </div>
+      <div class="col-lg-5 aparece-al-scroll">
+        <div class="tarjeta-cristal">
+          <div class="dato-contacto"><i class="bi bi-geo-alt-fill"></i><div><small>Lugar de nacimiento</small><strong>El Salvador, San Miguel</strong></div></div>
+          <div class="dato-contacto mb-0"><i class="bi bi-envelope-fill"></i><div><small>Correo electrónico</small><strong style="word-break:break-all">shattylizamamedrano@gmail.com</strong></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN + HABILIDADES -->
+<section id="formacion">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 aparece-al-scroll">
+        <h3 class="mb-4"><i class="bi bi-journal-bookmark-fill text-info me-2"></i>Formación</h3>
+        <div class="linea-tiempo">
+          <div class="tarjeta-cristal"><span class="etiqueta-anio">2014 - 2021</span><h5 class="mt-2 mb-1">Kinder 5 años - 6° grado</h5><small class="text-secondary">Centro Escolar Dolores Souza</small></div>
+          <div class="tarjeta-cristal"><span class="etiqueta-anio">2022 - 2024</span><h5 class="mt-2 mb-1">7° - 9° grado</h5><small class="text-secondary">Centro Escolar Dolores C. Retes</small></div>
+          <div class="tarjeta-cristal"><span class="etiqueta-anio">2024 - 2026</span><h5 class="mt-2 mb-1">1°Freshmen- 3°senior</h5><small class="text-secondary">Programa Empresarial ¡Superate Grupo Q</small></div>
+          <div class="tarjeta-cristal"><span class="etiqueta-anio">2025 - 2026</span><h5 class="mt-2 mb-1">1° - 2° Bachillerato General</h5><small class="text-secondary">Complejo Educativo "Ofelia Herrera"</small></div>
+        </div>
+      </div>
+      <div class="col-lg-6 aparece-al-scroll">
+        <h3 class="mb-4"><i class="bi bi-code-square text-info me-2"></i>Habilidades</h3>
+        <div class="tarjeta-cristal">
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="insignia-tecnologia"><i class="bi bi-filetype-html" style="color:#ff6b3d"></i>HTML5</span>
+            <span class="insignia-tecnologia"><i class="bi bi-filetype-css" style="color:#3db2ff"></i>CSS3</span>
+            <span class="insignia-tecnologia"><i class="bi bi-filetype-js" style="color:#ffd93d"></i>JavaScript</span>
+            <span class="insignia-tecnologia"><i class="bi bi-filetype-jsx" style="color:#00e0ff"></i>React</span>
+            <span class="insignia-tecnologia"><i class="bi bi-bootstrap-fill" style="color:#a97dff"></i>Tailwind / Bootstrap</span>
+            <span class="insignia-tecnologia"><i class="bi bi-fire" style="color:#ffa63d"></i>Firebase</span>
+            <span class="insignia-tecnologia"><i class="bi bi-git" style="color:#ff5d4d"></i>Git &amp; GitHub</span>
+            <span class="insignia-tecnologia"><i class="bi bi-filetype-cs" style="color:#b6ff3b"></i>C#</span>
+          </div>
+          <p class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Liderazgo y trabajo en equipo</p>
+          <p class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Resolución de problemas</p>
+          <p class="mb-0"><i class="bi bi-check2-circle text-info me-2"></i>Responsabilidad y compromiso</p>
+          <p class="mb-0"><i class="bi bi-check2-circle text-info me-2"></i>Adaptabilidad</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGROS -->
+<section id="logros">
+  <div class="container">
+    <div class="text-center aparece-al-scroll">
+      <h2 class="titulo-seccion">Mis logros académicos</h2>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="filtros">
+      <button class="boton-filtro activo" onclick="filtrarLogros('todos',this)">Todos (11)</button>
+      <button class="boton-filtro" onclick="filtrarLogros('certificacion',this)">Certificaciones TOEIC &amp; Excel</button>
+      <button class="boton-filtro" onclick="filtrarLogros('reconocimiento',this)">Premios &amp; Promedios</button>
+      <button class="boton-filtro" onclick="filtrarLogros('programa',this)">Programas &amp; Cursos</button>
+      <button class="boton-filtro" onclick="filtrarLogros('certamen',this)">Certámenes &amp; Competencias</button>
+    </div>
+    <div class="row g-4" id="logros-grid"></div>
+  </div>
+</section>
+
+<!-- VOLUNTARIADOS -->
+<section id="voluntariados">
+  <div class="container">
+    <div class="text-center aparece-al-scroll">
+      <h2 class="titulo-seccion">Mi experiencia en voluntariado</h2>
+    </div>
+    <div class="row g-4" id="vol-grid"></div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio">
+  <div class="container">
+    <div class="text-center aparece-al-scroll">
+      <h2 class="titulo-seccion">Portafolio</h2>
+      <p class="subtitulo-seccion">Proyectos donde una idea se vuelve prototipo, sistema o propuesta con intención real.</p>
+    </div>
+    <div class="row g-4">
+      <!--Proyectos realizados a lo largo de mi trayectoria en ¡Supérate!-->
+      <div class="col-12 col-sm-6 col-lg-3 aparece-al-scroll"><a class="proyecto-portafolio" style="--g1:#00b4ff;--g2:#6a3dff" href="https://apps.powerapps.com/play/e/default-d8e3bd44-0bba-426b-952d-ada7bb17393c/a/14e39d8c-bb52-41d8-bb54-c71872a9160a?tenantId=d8e3bd44-0bba-426b-952d-ada7bb17393c&sourcetime=1790127189898" target="_blank" rel="noopener"><small>HACKATHON · 2024</small><h3>WashDry</h3></a></div>
+      <div class="col-12 col-sm-6 col-lg-3 aparece-al-scroll"><a class="proyecto-portafolio" style="--g1:#19d68a;--g2:#0a7f9c" href="https://TU-PORTAFOLIO.com" target="_blank" rel="noopener"><small>EXPO LOGROS · 2025</small><h3>GreenMind</h3></a></div>
+      <div class="col-12 col-sm-6 col-lg-3 aparece-al-scroll"><a class="proyecto-portafolio" style="--g1:#8b5cf6;--g2:#ff3d9a" href="https://agent-6a298240a8f5998f19e9a231--greenlysup.netlify.app" target="_blank" rel="noopener"><small>EXPOTECH · 2026</small><h3>Greenly</h3></a></div>
+      <div class="col-12 col-sm-6 col-lg-3 aparece-al-scroll"><a class="proyecto-portafolio" style="--g1:#ff7a3d;--g2:#ff3d9a" href="https://kukikoffee.vercel.app/pages/nosotros.html" target="_blank" rel="noopener"><small>2026</small><h3>KuKi</h3></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv" class="pt-0">
+  <div class="container">
+    <div class="caja-cv aparece-al-scroll">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2 class="h1 fw-bold">¿Quieres conocer más sobre mi trayectoria?</h2>
+          <p class="mb-0">Descarga mi CV en PDF para revisar mis habilidades técnicas, proyectos y experiencia académica.</p>
+        </div>
+        <div class="col-lg-4 d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
+          <a href="https://docs.google.com/document/d/1tMtU9cRGtarrCBSatF0epM9a3j_lAXrl5iA4oH63wBA/edit?usp=sharing" download="CV_Shatty.pdf" class="btn btn-light rounded-pill px-4 fw-bold"><i class="bi bi-download me-2"></i>Descargar</a>
+          <a href="https://docs.google.com/document/d/1tMtU9cRGtarrCBSatF0epM9a3j_lAXrl5iA4oH63wBA/edit?usp=sharing" target="_blank" class="btn btn-outline-light rounded-pill px-4"><i class="bi bi-eye-fill me-2"></i>Ver online</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <a href="#"><i class="https://www.linkedin.com/in/shatty-lizama-160927435/"></i> LinkedIn</a>
+  <a href="#"><i class="https://github.com/Shatty26"></i> GitHub</a>
+  <a href="mailto:shattylizamamedrano@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+  <p class="small mt-4 mb-0">© 2026 Shatty. Todos los derechos reservados.</p>
+</footer>
+
+<!-- VENTANA DE IMAGEN -->
+<dialog id="vis">
+  <button class="boton-cerrar" onclick="vis.close()" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+  <h5 id="vis-t" class="mb-3"></h5>
+  <div id="vis-b"></div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+<script>
+/* IMÁGENES: guarda las tuyas en img/logros/logro-01.jpg ... logro-11.jpg
+   y en img/voluntariados/voluntariado-01.jpg ... voluntariado-06.jpg
+   (o cambia la ruta en el campo "img" de cada item). */
+const logros=[
+['programa','2021','Academic Language - English Course','Curso de idioma inglés para mejora mis habilidades en el idioma.','Curso de Inglés',''],
+['programa','2024','Curso de Robótica','Capacitación práctica en principios de robótica.','Formación Técnica',''],
+['reconocimiento','2024','2° Lugar por Mejor Promedio','Reconocimiento a la excelencia académica por obtener el segundo rendimiento escolar más alto del año.','Premio Académico','oro'],
+['certificacion','2024','Certificación TOEIC L&R','Acreditación internacional del nivel de dominio del idioma inglés en comprensión auditiva y lectura.','Certificación Oficial',''],
+['programa','2024','Programa Empresarial ¡Supérate! GrupoQ','Selección e ingreso al prestigioso programa de becas de alto rendimiento en inglés, informática y valores.','Beca de Excelencia','azul'],
+['reconocimiento','2024','Manejo de el lenguaje HTML','Diploma de reconocimiento por e dominio de este.','azul'],
+['reconocimiento','2024','Manejo de el lenguaje CSS','Diploma de reconocimiento por e dominio de este.','azul'],
+['reconocimiento','2024','Manejo de el lenguaje JavaScript','Diploma de reconocimiento por e dominio de este.','azul'],
+['reconocimiento','2025','2° Lugar por Mejor Promedio','Reconocimiento consecutivo a la dedicación y excelencia en el rendimiento académico del año lectivo.','Premio Académico','oro'],
+['certificacion','2025','Certificación TOEIC L&R','Re-certificación y avance continuo en los estándares internacionales de lectura y escucha en inglés.','Certificación Oficial',''],
+['certificacion','2025','Certificación Prep MOS Excel','Preparación intensiva y dominio de conceptos clave para la certificación Microsoft Office Specialist.','Especialización Digital',''],
+['certamen','2026','XXV Certamen de Investigación Técnica Bachiller','Participación en la competencia nacional de investigación organizada por el Banco Central de Reserva de El Salvador.','Investigación Académica','azul'],
+['certificacion','2026','Certificación MOS Expert Excel','Acreditación de nivel avanzado en Microsoft Excel para gestión de datos, análisis y automatización profesional.','Certificación Nivel Experto','oro'],
+['certamen','2026','Festival de Teatro EducArte - Etapa Nacional','Clasificación a la etapa nacional del festival cultural organizado por el Ministerio de Educación, Ciencia y Tecnología.','MINEDUCYT • Etapa Nacional','']
+
+];
+const vols=[
+['2025','Limpieza de Comunidad','Jornada comunitaria orientada al mantenimiento, orden y saneamiento de los espacios escolares y sus alrededores.','Complejo Educativo "Ofelia Herrera"',''],
+['2025','Festividad Infantil','Organización y apoyo logístico en actividades recreativas, dinámicas y convivencia para niños.','¡Supérate! Grupo Q','verde'],
+['2026','Voluntariado para Becados ID','Apoyo y acompañamiento en actividades formativas dirigidas a estudiantes becados.','Programa Becados ID',''],
+['2026','Proyecto de Reciclaje','Desarrollo y ejecución de un proyecto enfocado en la clasificación de residuos y concienciación ambiental.','Iniciativa Ecológica · 75 horas','verde'],
+['2026','Actividades para Niños','Desarrollo de talleres creativos, lúdicos y de sano esparcimiento para el desarrollo infantil.','Complejo Educativo "Ofelia Herrera"',''],
+['2026','Servicio Social de Limpieza','Jornada intensiva de mantenimiento de instalaciones y adecuación de espacios comunitarios.','Complejo Educativo "Ofelia Herrera" · 75 horas','azul']
+];
+const n2=i=>String(i+1).padStart(2,'0');
+const card=(cat,tono,anio,t,d,pie,img)=>`<div class="col-md-6 col-lg-4 tarjeta-item" data-cat="${cat}"><div class="tarjeta-cristal ${tono&&'destaque-'+tono}"><button class="tarjeta-clic" data-img="${img}" data-t="${t.replace(/"/g,'&quot;')}"><span class="etiqueta-anio align-self-start">${anio}</span><h4>${t}</h4><p>${d}</p><div class="pie-tarjeta"><span>${pie}</span><em><i class="bi bi-image"></i> Ver imagen</em></div></button></div></div>`;
+document.getElementById('logros-grid').innerHTML=logros.map((l,i)=>card(l[0],l[5],l[1],l[2],l[3],l[4],`img/logros/logro-${n2(i)}.jpeg`)).join('');
+document.getElementById('vol-grid').innerHTML=vols.map((v,i)=>card('',v[4],v[0],v[1],v[2],v[3],`img/voluntariados/voluntariado-${n2(i)}.jpeg`)).join('');
+
+function filtrarLogros(cat,btn){
+  document.querySelectorAll('#filtros .boton-filtro').forEach(b=>b.classList.remove('activo'));btn.classList.add('activo');
+  document.querySelectorAll('#logros-grid .tarjeta-item').forEach(e=>{
+    e.classList.toggle('oculta',cat!=='todos'&&e.dataset.cat!==cat);
+    e.style.animation='none';e.offsetHeight;e.style.animation='';
+  });
+}
+
+/* Ventana con imagen */
+const vis=document.getElementById('vis');
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.tarjeta-clic');
+  if(b){
+    document.getElementById('vis-t').textContent=b.dataset.t;
+    const im=new Image();im.alt=b.dataset.t;
+    im.onerror=()=>{document.getElementById('vis-b').innerHTML=`<div class="imagen-vacia"><i class="bi bi-image fs-1"></i><p class="mb-0">Aún no hay imagen.<br>Guárdala en <code>${b.dataset.img}</code></p></div>`};
+    im.src=b.dataset.img;
+    document.getElementById('vis-b').replaceChildren(im);
+    vis.showModal();
+  }else if(e.target===vis)vis.close();
+});
+
+/* Brillo que sigue al cursor */
+document.addEventListener('pointermove',e=>{
+  const c=e.target.closest('.tarjeta-cristal');if(!c)return;
+  const r=c.getBoundingClientRect();
+  c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px');
+});
+
+/* Texto que se escribe solo */
+const roles=['Estudiante','Desarrolladora web','Creadora de soluciones'];
+let ri=0,ci=0,borrando=false;const rol=document.getElementById('rol');
+(function tick(){
+  const p=roles[ri];ci+=borrando?-1:1;rol.textContent=p.slice(0,ci);
+  let t=borrando?45:90;
+  if(!borrando&&ci===p.length){borrando=true;t=1400}
+  else if(borrando&&ci===0){borrando=false;ri=(ri+1)%roles.length;t=300}
+  setTimeout(tick,t);
+})();
+
+/* Aparición al hacer scroll + contadores */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('visible');io.unobserve(e.target);
+  e.target.querySelectorAll('[data-n]').forEach(el=>{
+    const fin=+el.dataset.n;let v=0;
+    const s=setInterval(()=>{v+=Math.ceil(fin/40);if(v>=fin){v=fin;clearInterval(s)}el.textContent=v+(fin>100?'+':'')},35);
+  });
+}),{threshold:.15});
+document.querySelectorAll('.aparece-al-scroll').forEach(el=>io.observe(el));
+
+/* Barra de progreso */
+addEventListener('scroll',()=>{
+  document.getElementById('barra-progreso').style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%';
+},{passive:true});
+</script>
+</body>
+</html>
